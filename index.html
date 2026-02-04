@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Timetable</title>
+
+    <style>
+      :root {
+        --scale: 1;
+      }
+
+      body {
+        font-family: Inter, system-ui, Arial, sans-serif;
+        margin: 10px;
+        background: #fafafa;
+      }
+
+      h1 {
+        font-size: calc(20px * var(--scale));
+        text-align: center;
+        margin-bottom: 10px;
+      }
+
+      table {
+        border-collapse: collapse;
+        width: 100%;
+        table-layout: fixed;
+        background: white;
+      }
+
+      th,
+      td {
+        border: 1px solid #e2e8f0;
+        padding: calc(6px * var(--scale));
+        text-align: center;
+        vertical-align: middle;
+        font-size: calc(14px * var(--scale));
+      }
+
+      th {
+        background: #f1f5f9;
+        font-weight: 700;
+      }
+
+      .day {
+        background: #f8fafc;
+        font-weight: 700;
+        text-align: left;
+        padding-left: calc(8px * var(--scale));
+      }
+
+      /* ================= COURSE CELL BACKGROUNDS ================= */
+      td.ME450 { background: #DBEAFE; }
+      td.ME527 { background: #BFDBFE; }
+      td.ME514 { background: #E0F2FE; }
+      td.ME508 { background: #EFF6FF; }
+
+      td.CS450M { background: #FEE2E2; }
+      td.ME499 { background: #EDE9FE; }
+
+      .course {
+        color: white;
+        font-weight: 700;
+        padding: calc(4px * var(--scale)) calc(6px * var(--scale));
+        border-radius: calc(6px * var(--scale));
+        display: inline-block;
+        font-size: calc(12px * var(--scale));
+        line-height: 1.2;
+      }
+
+      /* ===== ME COURSES (same family – blue shades) ===== */
+      .ME450 {
+        background: #1e40af;
+      } /* Dark Blue */
+      .ME527 {
+        background: #2563eb;
+      } /* Medium Blue */
+      .ME514 {
+        background: #60a5fa;
+        color: #0f172a;
+      } /* Soft Blue */
+      .ME508 {
+        background: #93c5fd;
+        color: #0f172a;
+      } /* Light Blue */
+
+      /* ===== CS COURSE (totally different) ===== */
+      .CS450M {
+        background: #dc2626;
+      } /* Strong Red */
+
+      /* ===== PROJECT (unique) ===== */
+      .ME499 {
+        background: #7c3aed;
+      } /* Purple */
+
+      .lunch {
+        background: #fde68a;
+        color: #92400e;
+        font-weight: 800;
+      }
+
+      /* 📱 Scale values by screen width */
+      @media (max-width: 768px) {
+        :root {
+          --scale: 0.85;
+        }
+      }
+
+      @media (max-width: 600px) {
+        :root {
+          --scale: 0.72;
+        }
+      }
+
+      @media (max-width: 420px) {
+        :root {
+          --scale: 0.62;
+        }
+      }
+
+      @media print {
+        :root {
+          --scale: 1;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Timetable</h1>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Day / Time</th>
+          <th>09–10</th>
+          <th>10–11</th>
+          <th>11–12</th>
+          <th>12–1</th>
+          <th>1–2</th>
+          <th>2–3</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td class="day">Monday</td>
+          <td class="ME527"><span class="course ME527">ME527</span></td>
+          <td></td>
+          <td></td>
+          <td class="ME508"><span class="course ME508">ME508</span></td>
+          <td class="lunch">LUNCH</td>
+          <td class="ME499"><span class="course ME499">ME499</span></td>
+        </tr>
+
+        <tr>
+          <td class="day">Tuesday</td>
+          <td class="ME514"><span class="course ME514">ME514</span></td>
+          <td class="ME450"><span class="course ME450">ME450</span></td>
+          <td class="ME527"><span class="course ME527">ME527</span></td>
+          <td class="CS450M"><span class="course CS450M">CS450M</span></td>
+          <td class="lunch">LUNCH</td>
+          <td class="ME499"><span class="course ME499">ME499</span></td>
+        </tr>
+
+        <tr>
+          <td class="day">Wednesday</td>
+          <td></td>
+          <td></td>
+          <td class="ME508"><span class="course ME508">ME508</span></td>
+          <td class="ME514"><span class="course ME514">ME514</span></td>
+          <td class="lunch">LUNCH</td>
+          <td class="CS450M"><span class="course CS450M">CS450M</span></td>
+        </tr>
+
+        <tr>
+          <td class="day">Thursday</td>
+          <td class="ME450"><span class="course ME450">ME450</span></td>
+          <td class="ME527"><span class="course ME527">ME527</span></td>
+          <td></td>
+          <td class="CS450M"><span class="course CS450M">CS450M</span></td>
+          <td class="lunch">LUNCH</td>
+        </tr>
+
+        <tr>
+          <td class="day">Friday</td>
+          <td></td>
+          <td class="ME508"><span class="course ME508">ME508</span></td>
+          <td class="ME514"><span class="course ME514">ME514</span></td>
+          <td class="ME450"><span class="course ME450">ME450</span></td>
+          <td class="lunch">LUNCH</td>
+          <td class="CS450M"><span class="course CS450M">CS450M</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>
